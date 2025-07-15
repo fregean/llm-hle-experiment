@@ -22,12 +22,12 @@ cp .env.example .env
 # 例: API_KEY=your_actual_api_key_here
 
 # 設定ファイルをコピー
-cp configs/deepseek_base.yml.example configs/deepseek_base.yml
+cp configs/parameters.yml.example configs/parameters.yml
 ```
 
 プロジェクトルートに`.env`ファイルを作成し、`your_actual_api_key_here`の部分を編集してください。
 
-`configs/deepseek_base.yml`ファイルの名前と内容を他のモデル用に編集してください。
+`configs/parameters.yml`のファイル名と内容を実験用のモデルに合わせて編集してください（例：deepseek_base.yml）。
 
 ### 3. Docker環境の起動
 ```bash
@@ -96,7 +96,7 @@ docker-compose down -v
 
 ```
 ├── configs/                    # 設定ファイル
-│   ├── deepseek_base.yml.example # 設定ファイルテンプレート（deepseekモデルの例）
+│   ├── parameters.yml.example # 設定ファイルテンプレート
 │   └── prompts/                # システムプロンプト
 │       ├── em_system_prompt.yml # Exact Match用プロンプト
 │       └── mc_system_prompt.yml # Multiple Choice用プロンプト
