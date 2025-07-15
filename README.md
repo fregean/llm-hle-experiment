@@ -27,7 +27,7 @@ cp configs/deepseek_base.yml.example configs/deepseek_base.yml
 
 プロジェクトルートに`.env`ファイルを作成し、`your_actual_api_key_here`の部分を編集してください。
 
-`configs/deepseek_base.yml`ファイルを作成し、ymlファイルを編集してください。
+`configs/deepseek_base.yml`ファイルの名前と内容を他のモデル用に編集してください。
 
 ### 3. Docker環境の起動
 ```bash
@@ -116,7 +116,7 @@ docker-compose down -v
 │   ├── data_loader.py          # データ読み込み・前処理
 │   ├── evaluate.py             # モデル評価
 │   ├── model_handler.py        # モデル管理・推論
-│   ├── check_env.py            # 環境動作確認
+│   ├── check_env.py            # docker環境動作確認
 │   └── utils.py                # ユーティリティ関数
 ├── .env.example                # 環境変数テンプレート
 ├── .gitignore
