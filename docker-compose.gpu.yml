@@ -1,0 +1,11 @@
+# GPU対応のための設定ファイル
+# Load this file ONLY in environments with an NVIDIA GPU (e.g., Colab, Linux with GPU).
+services:
+  app:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

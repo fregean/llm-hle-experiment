@@ -1,0 +1,24 @@
+# CPU / GPU対応の設定ファイル
+services:
+  app:
+
+    build: .
+
+    container_name: llm-hle-experiment-app
+    
+    env_file:
+      - .env
+    
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - .:/app
+      # Hugging Faceのモデルやデータセットのキャッシュを永続化
+      - huggingface_cache:/root/.cache/huggingface
+      
+    tty: true
+    stdin_open: true
+
+volumes:
+  huggingface_cache:

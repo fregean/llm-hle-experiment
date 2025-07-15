@@ -1,0 +1,11 @@
+torch
+accelerate
+transformers
+datasets
+jupyterlab
+pyyaml
+pandas
+tqdm
+python-dotenv
+ipywidgets
+pillow

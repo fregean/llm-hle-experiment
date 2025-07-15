@@ -1,0 +1,16 @@
+# --- Model and Data ---
+MODEL_NAME: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+DATASET_NAME: "cais/hle"
+
+# --- Paths (relative to Colab runtime's root /content/) ---
+# Note: これらのパスは、セットアップスクリプトがGoogleDriveからデータをコピーした後に使用されます
+model_path: "models/deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+data_path: "data/hle" # 念のため
+output_path: "llm-hle-experiment/outputs"
+# 最終的なCSVパスは、output_pathを使用してコード内で構築されます。
+# e.g., f"{config['output_path']}/results/hle_analysis_results.csv"
+
+# --- Experiment Parameters ---
+NUM_SAMPLES_TO_RUN: 5
+MAX_LENGTH: 2048
+TEMPERATURE: 0.7
