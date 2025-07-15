@@ -56,7 +56,7 @@ docker-compose ps
 docker-compose exec app bash
 # コンテナ内のbashシェルに入ります（root@container_id:/app#）
 
-# 環境の動作テストを実行
+# 環境の動作テストを実行（初めて使用する際にお試し実行）
 python src/check_env.py
 
 # 動作確認後、元のターミナルに戻る
@@ -65,16 +65,21 @@ exit
 
 ### 5. 依存関係の管理
 
-新しいPythonパッケージを追加する場合：
-1. `requirements.txt`に追加
-2. コンテナを再構築: `docker-compose up -d --build`
+新しいPythonパッケージを`requirements.txt`に追加した後：
+```bash
+# コンテナを停止
+docker-compose down
+# 依存関係を反映してコンテナを再構築・起動
+docker-compose up -d --build
+```
 
 ### 6. 環境変数の変更
 
 `.env`ファイルを変更した後：
 ```bash
-# コンテナを再起動して環境変数を反映
+# コンテナを停止
 docker-compose down
+# 環境変数を反映してコンテナを再起動
 docker-compose up -d
 ```
 
@@ -136,14 +141,10 @@ docker-compose ps
 # Dockerのディスク使用量確認
 docker system df
 
-# 段階的クリーンアップ（推奨）
-docker image prune -a -f     # 既存コンテナで使用されていないイメージを削除
-docker volume prune -f       # 未使用ボリュームを削除
-docker builder prune -a -f   # ビルドキャッシュを削除
-
-# 現在のコンテナで使用中のイメージを確認（削除されません）
+# 現在のコンテナで使用中のイメージを確認
 docker ps -a
 
-# 一括クリーンアップ（停止中のコンテナも削除される）
-docker system prune -a --volumes -f
+# 段階的クリーンアップ
+docker image prune -a -f     # 既存コンテナで使用されていないイメージを削除
+docker builder prune -a -f   # ビルドキャッシュを削除
 ```
