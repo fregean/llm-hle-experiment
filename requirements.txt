@@ -1,7 +1,7 @@
 torch
 accelerate
 transformers
-datasets
+datasets>=4.0.0 # colabでも動作するようにバージョン指定
 jupyterlab
 pyyaml
 pandas

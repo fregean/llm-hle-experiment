@@ -9,7 +9,7 @@
 
 ### 1. リポジトリのクローン
 ```bash
-git clone <repository-url>
+git clone https://github.com/fregean/llm-hle-experiment.git
 cd llm-hle-experiment
 ```
 
