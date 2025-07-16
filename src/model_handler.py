@@ -54,23 +54,22 @@ class ModelHandler:
         messages = [{"role": "user", "content": prompt}]
         
         # トークナイザーはinput_idsとattention_maskを含む辞書を返す
-        model_inputs = self.tokenizer.apply_chat_template(
+        input_ids_tensor = self.tokenizer.apply_chat_template(
             messages,
             return_tensors="pt",
             add_generation_prompt=True
         ).to(self.device)
 
         outputs = self.model.generate(
-            input_ids=model_inputs,
+            input_ids_tensor,
             max_new_tokens=max_length, 
             temperature=temperature,
             do_sample=True if temperature > 0 else False,
             pad_token_id=self.tokenizer.eos_token_id
         )
-
-        # ★★★ 修正点 3: デコードする際の入力長を正しく取得する ★★★
-        input_ids_length = model_inputs['input_ids'].shape[1]
-        response_text = self.tokenizer.decode(outputs[0][input_ids_length:], skip_special_tokens=True)
+        # モデルの出力から生成されたテキストをデコード
+        input_length = input_ids_tensor.shape[1]
+        response_text = self.tokenizer.decode(outputs[0][input_length:], skip_special_tokens=True)
         
         return response_text
 
