@@ -1,7 +1,7 @@
 import yaml
 from pathlib import Path
 
-def load_config(config_path: str = '../configs/parameters.yml'):
+def load_config(config_path: str = 'configs/parameters.yml'):
     """
     YAML設定ファイルを読み込む。
 
@@ -34,7 +34,7 @@ def load_prompt_template(prompt_name: str) -> str:
         str: プロンプトのテンプレート文字列。エラーが発生した場合は空文字列。
     """
 
-    prompt_path = Path("../configs/prompts") / f"{prompt_name}.yml"
+    prompt_path = Path("configs/prompts") / f"{prompt_name}.yml"
     
     config = load_config(str(prompt_path))
 

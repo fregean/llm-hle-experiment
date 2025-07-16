@@ -9,6 +9,9 @@ services:
     env_file:
       - .env
     
+    environment:
+      - PYTHONPATH=/app:/app/src
+    
     ports:
       - "8888:8888"
 
