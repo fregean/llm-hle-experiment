@@ -1,0 +1,11 @@
+# --- Model and Data ---
+MODEL_NAME: "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+DATASET_NAME: "cais/hle"
+
+# --- Paths ---
+output_path: "outputs/results"
+
+# --- Experiment Parameters ---
+NUM_SAMPLES_TO_RUN: 5 # コメントアウトすると全件実行
+MAX_LENGTH: 32000
+TEMPERATURE: 0.6
