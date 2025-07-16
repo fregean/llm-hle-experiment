@@ -7,13 +7,13 @@
 
 ## 環境構築手順
 
-### 1. リポジトリのクローン
+### 1. Repository Clone
 ```bash
 git clone https://github.com/fregean/llm-hle-experiment.git
 cd llm-hle-experiment
 ```
 
-### 2. 環境変数の設定
+### 2. Environment variable configuration
 ```bash
 # .env.exampleをコピーして.envファイルを作成
 cp .env.example .env
@@ -29,7 +29,7 @@ cp configs/parameters.yml.example configs/parameters.yml
 
 `configs/parameters.yml`のファイル名と内容を実験用のモデルに合わせて編集してください（例：deepseek_base.yml）。
 
-### 3. Docker環境の起動
+### 3. Docker environment startup
 ```bash
 # 初回のみ: コンテナを構築・起動
 docker-compose up -d --build
@@ -42,7 +42,7 @@ docker-compose up -d
 docker-compose ps
 ```
 
-### 4. 使用方法
+### 4. Usage
 
 #### Jupyter Notebookの使用
 ```bash
@@ -63,7 +63,7 @@ python src/check_env.py
 exit
 ```
 
-### 5. 依存関係の管理
+### 5. Dependency management
 
 新しいPythonパッケージを`requirements.txt`に追加した後：
 ```bash
@@ -73,7 +73,7 @@ docker-compose down
 docker-compose up -d --build
 ```
 
-### 6. 環境変数の変更
+### 6. Environment variable changes
 
 `.env`ファイルを変更した後：
 ```bash
@@ -83,7 +83,7 @@ docker-compose down
 docker-compose up -d
 ```
 
-### 7. 停止・削除
+### 7. Stop and delete
 ```bash
 # 停止
 docker-compose down
@@ -92,7 +92,7 @@ docker-compose down
 docker-compose down -v
 ```
 
-## ディレクトリ構成
+## Directory structure
 
 ```
 ├── configs/                    # 設定ファイル
@@ -126,7 +126,7 @@ docker-compose down -v
 └── requirements.txt
 ```
 
-## トラブルシューティング
+## Troubleshooting
 
 ### ポートが使用中の場合
 ```bash
