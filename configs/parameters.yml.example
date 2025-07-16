@@ -3,7 +3,7 @@ MODEL_NAME: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
 DATASET_NAME: "cais/hle"
 
 # --- Paths ---
-output_path: "llm-hle-experiment/outputs/results"
+output_path: "outputs/results"
 
 # --- Experiment Parameters ---
 NUM_SAMPLES_TO_RUN: 5
