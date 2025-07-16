@@ -88,7 +88,7 @@ docker-compose up -d
 # 停止
 docker-compose down
 
-# 完全削除（データも含む）
+# 停止 & volumesのデータを削除
 docker-compose down -v
 ```
 
