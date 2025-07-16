@@ -1,7 +1,6 @@
 # CUDA 12.1を含むPyTorch公式イメージ
 # https://hub.docker.com/r/pytorch/pytorch/tags
 FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu22.04
-# Note: amd64向けのイメージなので、ARMベースのCPU（M1/M2/M3 Macなど）では警告が出ますが、動作には問題ありません。
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
