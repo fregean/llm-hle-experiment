@@ -39,7 +39,13 @@ class ModelHandler:
         )
         print("Model and tokenizer loaded successfully.")
 
-    def generate(self, prompt: str, max_length: int, temperature: float) -> str:
+    def generate(self, 
+        prompt: str, 
+        max_length: int, 
+        temperature: float,
+        top_p: float,
+        top_k: int
+        ) -> str:
         """
         与えられたプロンプトからテキストを生成します。
 
@@ -47,6 +53,8 @@ class ModelHandler:
             prompt (str): モデルへの入力プロンプト。
             max_length (int): 生成されるテキストの最大長。
             temperature (float): 生成のランダム性を制御する温度。
+            top_p (float): 多様性の上限を制御するトップPサンプリングのパラメータ。
+            top_k (int): 候補カットでノイズを減らすトップKサンプリングのパラメータ。
 
         Returns:
             str: モデルによって生成された生のテキスト。
@@ -64,6 +72,8 @@ class ModelHandler:
             input_ids_tensor,
             max_new_tokens=max_length, 
             temperature=temperature,
+            top_p=top_p,
+            top_k=top_k,
             do_sample=True if temperature > 0 else False,
             pad_token_id=self.tokenizer.eos_token_id
         )
