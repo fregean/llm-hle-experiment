@@ -8,4 +8,5 @@ output_path: "outputs/results"
 # --- Experiment Parameters ---
 NUM_SAMPLES_TO_RUN: 5
 MAX_LENGTH: 32000
-TEMPERATURE: 0.0
+TEMPERATURE: 0.6
+TOP_P: 0.95
