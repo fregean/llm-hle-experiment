@@ -1,0 +1,12 @@
+# --- Model and Data ---
+MODEL_NAME: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+DATASET_NAME: "cais/hle"
+
+# --- Paths ---
+output_path: "outputs/results"
+
+# --- Experiment Parameters ---
+# NUM_SAMPLES_TO_RUN: 5  # インデックス指定の場合は使用しない
+QUESTION_INDICES: [0, 4, 9, 14, 19]  # 実行したい問題のインデックス（0から開始）
+MAX_LENGTH: 32000
+TEMPERATURE: 0.0
